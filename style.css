@@ -1,0 +1,169 @@
+.final-score {
+  color: #555;
+  font-size: 18px;
+  left: 50%;
+  transform: translate(-50%);
+  top: 480px;
+  position: absolute;
+  text-align: center;
+  font-family: "lato";
+  padding: 10px;
+  width: 160px;
+  text-transform: uppercase;
+}
+.final-score:focus {
+  outline: none;
+}
+​ * {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+body {
+  background-image: linear-gradient(
+      rgba(62, 20, 20, 0.4),
+      rgba(62, 20, 20, 0.4)
+    ),
+    url("C:/Users/Owner/Desktop/JAVASCRIPT/pig_game/back.jpg");
+  position: relative;
+  font-family: lato;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  font-weight: 300;
+}
+.container {
+  width: 1000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  overflow: hidden;
+}
+​ .player-0-panel,
+.player-1-panel {
+  padding: 100px;
+  width: 50%;
+  float: left;
+}
+​ .player-name {
+  text-transform: uppercase;
+  font-size: 40px;
+  letter-spacing: 5px;
+  text-align: center;
+  font-weight: 100;
+  position: relative;
+  margin-bottom: 20px;
+}
+.player-score {
+  position: relative;
+  font-size: 80px;
+  color: #ed5f55;
+  text-align: center;
+  position: relative;
+  margin-bottom: 100px;
+  font-weight: 100;
+}
+.player-current-box {
+  position: relative;
+  font-size: 16px;
+  border: 1px solid #eb4d4d;
+  text-align: center;
+  background-color: #ed4d4d;
+  height: 80px;
+  width: 100px;
+  padding: 20px;
+}
+.active {
+  background-color: #f7f7f7;
+}
+.active .player-name {
+  font-weight: 300;
+}
+.player-current-box {
+  background-color: #eb4d4d;
+  color: #fff;
+  width: 40%;
+  position: relative;
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+}
+.player-current-label {
+  color: #000;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.player-current-score {
+  font-size: 30px;
+}
+button {
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  width: 200px;
+  color: #555;
+  background: none;
+  border: none;
+  font-family: lato;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 300;
+  transition: background-color 0.3s, color 0.3s;
+}
+button:hover {
+  font-weight: 600;
+}
+button:hover i {
+  margin-right: 20px;
+}
+button:focus {
+  outline: none;
+}
+i {
+  color: #eb4d4d;
+  line-height: 1;
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 35px;
+  vertical-align: text-top;
+  transition: margin 0.3s;
+}
+.btn-new {
+  top: 45px;
+}
+.btn-roll {
+  top: 360px;
+}
+.btn-hold {
+  top: 415px;
+}
+​ .dice {
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 175px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+#dice-1 {
+  top: 110px;
+}
+#dice-2 {
+  top: 240px;
+}
+.winner {
+  background-color: #f7f7f7;
+}
+.winner .player-name {
+  font-weight: 300;
+  color: #eb4d4d;
+}
