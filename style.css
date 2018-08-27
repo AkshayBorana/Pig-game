@@ -157,9 +157,9 @@ i {
 #dice-1 {
   top: 110px;
 }
-#dice-2 {
+/* #dice-2 {
   top: 240px;
-}
+} */
 .winner {
   background-color: #f7f7f7;
 }
