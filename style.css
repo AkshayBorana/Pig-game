@@ -9,7 +9,7 @@ body {
       rgba(62, 20, 20, 0.4),
       rgba(62, 20, 20, 0.4)
     ),
-    url("C:/Users/Owner/Desktop/Pig_Game/back.jpg");
+    url("./back.jpg");
   position: relative;
   font-family: lato;
   background-size: cover;
