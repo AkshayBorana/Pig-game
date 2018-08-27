@@ -1,3 +1,23 @@
+​ * {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(
+      rgba(62, 20, 20, 0.4),
+      rgba(62, 20, 20, 0.4)
+    ),
+    url("C:/Users/Owner/Desktop/Pig_Game/back.jpg");
+  position: relative;
+  font-family: lato;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  font-weight: 300;
+}
+
 .final-score {
   color: #555;
   font-size: 18px;
@@ -11,32 +31,11 @@
   width: 160px;
   text-transform: uppercase;
 }
+
 .final-score:focus {
   outline: none;
 }
-​ * {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-.clearfix {
-  content: "";
-  display: table;
-  clear: both;
-}
-body {
-  background-image: linear-gradient(
-      rgba(62, 20, 20, 0.4),
-      rgba(62, 20, 20, 0.4)
-    ),
-    url("C:/Users/Owner/Desktop/JAVASCRIPT/pig_game/back.jpg");
-  position: relative;
-  font-family: lato;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  font-weight: 300;
-}
+
 .container {
   width: 1000px;
   position: absolute;
@@ -46,7 +45,8 @@ body {
   background-color: #fff;
   overflow: hidden;
 }
-​ .player-0-panel,
+
+​.player-0-panel,
 .player-1-panel {
   padding: 100px;
   width: 50%;
