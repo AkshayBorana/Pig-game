@@ -1,27 +1,36 @@
-var scores, activePlayer, roundScore, gamePlaying;
+var scores, activePlayer, roundScore, gamePlaying, lastDice;
 
 init();
 
 document.querySelector('.btn-roll').addEventListener('click', function () {
 
     if (gamePlaying) {    //1. as soon as the button is clicked we need a random number.............................................
-        var dice = Math.floor(Math.random() * 6) + 1;
-
+        var dice1 = Math.floor(Math.random() * 6) + 1;
+        var dice2 = Math.floor(Math.random() * 6) + 1;
 
         //2. Display the result...................................................................................
-        diceDOM = document.querySelector('.dice');
-        diceDOM.style.display = 'block';
-        diceDOM.src = 'dice-' + dice + '.png';
+        document.getElementById('dice-1').style.display = 'block';
+        document.getElementById('dice-2').style.display = 'block';
+        document.getElementById('dice-1').src = 'dice-' + dice1 + '.png';
+        document.getElementById('dice-2').src = 'dice-' + dice2 + '.png';
 
-        //3. Update the round score If the rolled number  was not a 1.............................................
-        if (dice !== 1) {
+        //If lastDice and dice both are 6 then the score of that player will be 0................
+        // if (dice === 6 && lastDice === 6){
+
+        //     scores[activePlayer] = 0;
+        //     document.querySelector('#score-' + activePlayer).textContent = 0;
+        //     //then next players turn...................................................
+        //     nextPlayer(); }
+         //3. Update the round score If the rolled number  was not a 1.............................................
+         if (dice1 !== 1 && dice2 !== 1){
             //Add score...........................................................................................
-            roundScore += dice; // wil add the value of diec into roundscore  "roundScore= roundScore + dice"
+            roundScore += dice1 + dice2; // wil add the value of diec into roundscore  "roundScore= roundScore + dice"
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
         } else {
             //Next player.........................................................................................
             nextPlayer();
         }
+        // lastDice = dice;
     }
 
 });
@@ -35,10 +44,21 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
         //2. Update the UI with the global score..................................................................
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
+        var input = document.querySelector('.final-score').value;
+        var winningScore ;
+
+        // undefined, null, 0 or "" then it is COERCEd to False, anything else if true........
+        if (input) {
+            winningScore = input;
+        }else {
+            winningScore = 100;
+        }
+
         //3. Check if player won the game.........................................................................
-        if (scores[activePlayer] >= 20) {
+        if (scores[activePlayer] >= winningScore) {
             document.querySelector('#name-' + activePlayer).textContent = 'WINNER!';
-            document.querySelector('.dice').style.display = 'none';
+            document.querySelector('.dice-1').style.display = 'none';
+            document.querySelector('.dice-2').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');  // adding class to the winner player
             document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active'); // removing active class from the winning player..
             gamePlaying = false;
@@ -65,7 +85,8 @@ function nextPlayer() {
     document.querySelector('.player-1-panel').classList.toggle('active');
 
     // Hide the dice when it shows 1 for activePlayer......................................................
-    document.querySelector('.dice').style.display = 'none';
+    document.querySelector('.dice-1').style.display = 'none';
+    document.querySelector('.dice-2').style.display = 'none';
 };
 
 // initializing the game\....................................................................................
@@ -77,7 +98,8 @@ function init() {
     activePlayer = 0;
     roundScore = 0;
     gamePlaying = true;
-    document.querySelector('.dice').style.display = 'none';
+    document.querySelector('#dice-1').style.display = 'none';
+    document.querySelector('#dice-2').style.display = 'none';
 
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
