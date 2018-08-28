@@ -1,22 +1,13 @@
-​ * {
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
-
-body {
-  background-image: linear-gradient(
-      rgba(62, 20, 20, 0.4),
-      rgba(62, 20, 20, 0.4)
-    ),
-    url("./back.jpg");
-  position: relative;
-  font-family: lato;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  font-weight: 300;
-}
+/* .clearfix{
+    content: "";
+    display: table;
+    clear: both;
+} */
 
 .final-score {
   color: #555;
@@ -31,11 +22,22 @@ body {
   width: 160px;
   text-transform: uppercase;
 }
-
 .final-score:focus {
   outline: none;
 }
-
+body {
+  background-image: linear-gradient(
+      rgba(62, 20, 20, 0.4),
+      rgba(62, 20, 20, 0.4)
+    ),
+    url("C:/Users/Owner/Desktop/JAVASCRIPT/pig_game/back.jpg");
+  position: relative;
+  font-family: lato;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  font-weight: 300;
+}
 .container {
   width: 1000px;
   position: absolute;
@@ -46,13 +48,15 @@ body {
   overflow: hidden;
 }
 
-​.player-0-panel,
+.player-0-panel,
 .player-1-panel {
   padding: 100px;
   width: 50%;
   float: left;
+  height: ;
 }
-​ .player-name {
+
+.player-name {
   text-transform: uppercase;
   font-size: 40px;
   letter-spacing: 5px;
@@ -126,7 +130,7 @@ button:hover i {
   margin-right: 20px;
 }
 button:focus {
-  outline: none;
+  outline: none; /* focus generally triggers when the user clickon the element.*/
 }
 i {
   color: #eb4d4d;
@@ -146,7 +150,8 @@ i {
 .btn-hold {
   top: 415px;
 }
-​ .dice {
+
+.dice {
   height: 80px;
   position: absolute;
   left: 50%;
@@ -155,11 +160,9 @@ i {
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
 #dice-1 {
-  top: 110px;
+  top: 230px;
 }
-/* #dice-2 {
-  top: 240px;
-} */
+/* #dice-2{ top: 240px;} */
 .winner {
   background-color: #f7f7f7;
 }
