@@ -14,13 +14,6 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
         document.getElementById('dice-1').src = 'dice-' + dice1 + '.png';
         document.getElementById('dice-2').src = 'dice-' + dice2 + '.png';
 
-        //If lastDice and dice both are 6 then the score of that player will be 0................
-        // if (dice === 6 && lastDice === 6){
-
-        //     scores[activePlayer] = 0;
-        //     document.querySelector('#score-' + activePlayer).textContent = 0;
-        //     //then next players turn...................................................
-        //     nextPlayer(); }
          //3. Update the round score If the rolled number  was not a 1.............................................
          if (dice1 !== 1 && dice2 !== 1){
             //Add score...........................................................................................
@@ -51,7 +44,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
         if (input) {
             winningScore = input;
         }else {
-            winningScore = 100;
+            winningScore = 20;
         }
 
         //3. Check if player won the game.........................................................................
@@ -107,8 +100,8 @@ function init() {
     document.getElementById('current-1').textContent = '0';
     document.getElementById('name-0').textContent = 'Player 1';
     document.getElementById('name-1').textContent = 'Player 2';
-    document.querySelector('.player-0-panel').classList.remove('winnwe');
-    document.querySelector('.player-1-panel').classList.remove('winnwe');
+    document.querySelector('.player-0-panel').classList.remove('winner');
+    document.querySelector('.player-1-panel').classList.remove('winner');
     document.querySelector('.player-0-panel').classList.remove('active');
     document.querySelector('.player-0-panel').classList.add('active');
     document.querySelector('.player-1-panel').classList.remove('active');
